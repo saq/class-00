@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Intro to R for Biologists</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Intro to R for Biologists">
+  <meta name="author" content="Simon Queenborough">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+    <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+    <!-- END LOGO SLIDE -->
+    
+
+    <!-- TITLE SLIDE -->
+    <!-- Should I move this to a Local Layout File? -->
+    <slide class="title-slide segue nobackground">
+      <hgroup class="auto-fadein">
+        <h1>Intro to R for Biologists</h1>
+        <h2>Class 0 - What is R?</h2>
+        <p>Simon Queenborough<br/>Evolution, Ecology &amp; Organismal Biology, OSU</p>
+      </hgroup>
+          </slide>
+
+    <!-- SLIDES -->
+      <slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Course Outline</h2>
+  </hgroup>
+  <article>
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>R programming language is a lot like magic...</h2>
+  </hgroup>
+  <article>
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li>except instead of spells you have functions.</li>
+</ul>
+
+
+</div>
+<div style='float:right;width:48%;'>
+  <figure>
+  <img src="assets/img/R-hp.png" height='500px'>
+</figure>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>SPSS and SAS users are like muggles.</h2>
+  </hgroup>
+  <article>
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li>They are limited in their ability to change their environment. </li>
+<li>They have to rely on algorithms that have been developed for them. </li>
+<li>The way they approach a problem is constrained by how SAS/SPSS employed programmers thought to approach them. </li>
+<li>And they have to pay money to use these constraining algorithms.</li>
+</ul>
+
+
+</div>
+<div style='float:right;width:48%;'>
+  <figure>
+  <img src="assets/img/muggle.jpg">
+</figure>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>R users are like wizards!</h2>
+  </hgroup>
+  <article>
+    
+<div style='float:left;width:48%;' class='centered'>
+  <ul>
+<li>They can rely on functions (spells) that have been developed for them by statistical researchers, </li>
+<li>but they can also create their own. </li>
+<li>They don’t have to pay for the use of them, and</li>
+<li> once experienced enough (like Dumbledore), they are almost unlimited in their ability to change their environment. </li>
+</ul>
+
+
+</div>
+<div style='float:right;width:48%;'>
+  <figure>
+  <img src="assets/img/wizard.jpg">
+</figure>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>History of R</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>S: language for data analysis developed at Bell Labs circa 1976</li>
+<li>Licensed by AT&amp;T/Lucent to Insightful Corp. Product name: S-plus.</li>
+<li>R: initially written &amp; released as an open source software by Ross Ihaka and Robert Gentleman at U Auckland during 90s (R plays on name &#39;S&#39;)</li>
+<li>Since 1997: international R-core team ~15 people &amp; 1000s of code writers and statisticians happy to share their libraries! AWESOME!</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>“Open source”... that just means I don’t have to pay for it, right?</h2>
+  </hgroup>
+  <article>
+    <h3>No. Much more:</h3>
+
+<ul>
+<li>Provides full access to algorithms and their implementation</li>
+<li>Gives you the ability to fix bugs and extend software</li>
+<li>Provides a forum allowing researchers to explore and expand the methods used to analyze data</li>
+<li>Is the product of 1000s of leading experts in the fields they know best. It is CUTTING EDGE. </li>
+<li>Ensures that scientists around the world - and not just ones in rich countries - are the co-owners to the software tools needed to carry out research</li>
+<li>Promotes reproducible research by providing open and accessible tools</li>
+<li>Most of R is written in… R! This makes it quite easy to see what functions are actually doing.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>What is it?</h2>
+  </hgroup>
+  <article>
+    <h3>R is an interpreted computer language.</h3>
+
+<ul>
+<li>Most user-visible functions are written in R itself, calling upon a smaller set of internal primitives. </li>
+<li>It is possible to interface procedures written in C, C+, or FORTRAN languages for efficiency, and to write additional primitives.</li>
+<li>System commands can be called from within R</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>What is it?</h2>
+  </hgroup>
+  <article>
+    <h3>R is used for data manipulation, statistics, and graphics. It is made up of:</h3>
+
+<ul>
+<li>operators (+  -  &lt;-  *  %*%  …) for calculations on arrays &amp; matrices</li>
+<li>large, coherent, integrated collection of functions</li>
+<li>facilities for making unlimited types of publication quality graphics</li>
+<li>user written functions &amp; sets of functions (packages); 800+ contributed packages so far &amp; growing</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>R</h2>
+  </hgroup>
+  <article>
+    
+<div style='float:left;width:48%;' class='centered'>
+  <h3>Advantages</h3>
+
+<ul>
+<li>Fast and free.</li>
+<li>State of the art: Statistical researchers provide their methods as R packages. SPSS and SAS are   years behind R!</li>
+<li>2nd only to MATLAB for graphics.</li>
+<li>Mx, WinBugs, and other programs use or will use R.</li>
+<li>Active user community</li>
+<li>Excellent for simulation, programming, computer intensive analyses, etc.</li>
+<li>-Forces you to think about your analysis.</li>
+<li>Interfaces with database storage software (SQL)</li>
+</ul>
+
+
+</div>
+<div style='float:right;width:48%;'>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>R</h2>
+  </hgroup>
+  <article>
+    
+<div style='float:left;width:48%;' class='centered'>
+  <h3>Advantages</h3>
+
+<ul>
+<li>Fast and free.</li>
+<li>State of the art: Statistical researchers provide their methods as R packages. SPSS and SAS are   years behind R!</li>
+<li>2nd only to MATLAB for graphics.</li>
+<li>Mx, WinBugs, and other programs use or will use R.</li>
+<li>Active user community</li>
+<li>Excellent for simulation, programming, computer intensive analyses, etc.</li>
+<li>Forces you to think about your analysis.</li>
+<li>Interfaces with database storage software (SQL)</li>
+</ul>
+
+
+</div>
+<div style='float:right;width:48%;'>
+  <h3>Disadvantages</h3>
+
+<ul>
+<li>Not user friendly @ start -  steep learning curve, minimal GUI.</li>
+<li>No commercial support; figuring out correct methods or how to use a function on your own can be frustrating.</li>
+<li>Easy to make mistakes and not know. </li>
+<li>Working with (<em>very</em>) large datasets is limited by RAM</li>
+<li>Data prep &amp; cleaning can be messier &amp; more mistake prone in R vs. SPSS or SAS</li>
+<li>Some users complain about hostility on the R listserve</li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>Learning R...</h2>
+  </hgroup>
+  <article>
+    <figure>
+  <img src="assets/img/bang.png" height='500px'>
+</figure>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>R-help listserve...</h2>
+  </hgroup>
+  <article>
+    <figure>
+  <img src="assets/img/severus.png" height='540px'>
+</figure>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>R vs.</h2>
+  </hgroup>
+  <article>
+    
+<div style='float:left;width:48%;' class='centered'>
+  <h3>R</h3>
+
+<ul>
+<li>Many different datasets (and other “objects”) available at same time</li>
+<li>Datasets can be of any dimension</li>
+<li>Functions can be modified</li>
+<li>Experience is interactive-you program until you get exactly what you want</li>
+<li>One stop shopping - almost every analytical tool you can think of is available</li>
+<li>R is free and will continue to exist. Nothing can make it go away, its price will never increase. </li>
+</ul>
+
+
+</div>
+<div style='float:right;width:48%;'>
+  <h3>Commercial</h3>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>R vs.</h2>
+  </hgroup>
+  <article>
+    
+<div style='float:left;width:48%;' class='centered'>
+  <h3>R</h3>
+
+<ul>
+<li>Many different datasets (and other “objects”) available at same time</li>
+<li>Datasets can be of any dimension</li>
+<li>Functions can be modified</li>
+<li>Experience is interactive-you program until you get exactly what you want</li>
+<li>One stop shopping - almost every analytical tool you can think of is available</li>
+<li>R is free and will continue to exist. Nothing can make it go away, its price will never increase. </li>
+</ul>
+
+
+</div>
+<div style='float:right;width:48%;'>
+  <h3>Commercial</h3>
+
+<ul>
+<li>One datasets available at a given time</li>
+<li>Datasets are rectangular</li>
+<li>Functions are proprietary</li>
+<li>Experience is passive-you choose an analysis and they give you everything they think you need</li>
+<li>Tend to be have limited scope, forcing you to learn additional programs; extra options cost more and/or require you to learn a different language (e.g., SPSS Macros)</li>
+<li>They cost money. There is no guarantee they will continue to exist, but if they do, you can bet that their prices will always increase</li>
+</ul>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>There are over 800 add-on packages</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>This is an enormous advantage - new techniques available without delay, and they can be performed using the R language you already know.</li>
+<li>Allows you to build a customized statistical program suited to your own needs. </li>
+<li>Downside = as the number of packages grows, it is becoming difficult to choose the best package for your needs, &amp; QC is an issue.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Typical R session</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Start up R via the GUI or favorite text editor</li>
+<li>Two windows:
+
+<ul>
+<li>1+ new or existing scripts (text files) - these will be saved </li>
+<li>Terminal – output &amp; temporary input - usually unsaved</li>
+</ul></li>
+</ul>
+
+<figure>
+  <img src="assets/img/r-session.png" height='500px'>
+</figure>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h2>Typical R session</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>R sessions are interactive</li>
+<li>At end, all you need to do is save your script file(s) - which can easily be rerun later. </li>
+</ul>
+
+<figure>
+  <img src="assets/img/r-session.png" height='500px'>
+</figure>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h2>R objects</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Almost all things in R – functions, datasets, results, etc. – are OBJECTS.<br>
+(graphics are written out and are not stored as objects)</li>
+<li>Script can be thought of as a way to make objects. Your goal is usually to write a script that, by its end, has created the objects (e.g., statistical results) and graphics you need. </li>
+<li>Objects are classified by two criteria:
+
+<ul>
+<li>MODE: how objects are stored in R - character, numeric, logical, factor, list, &amp; function </li>
+<li>CLASS: how objects are treated by functions (important to know!) - [vector], matrix, array, data.frame, &amp; hundreds of special classes created by specific functions</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h2>Learning R</h2>
+  </hgroup>
+  <article>
+    <ol>
+<li>Check out the course wikisite - lots of good manuals &amp; links</li>
+<li>Read through the CRAN website</li>
+<li>Use <a href="http://www.rseek.org/">http://www.rseek.org/</a> instead of google</li>
+<li>Know your objects’ classes: class(x) or info(x)</li>
+<li>Because R is interactive, errors are your friends!</li>
+<li>?lm    gives you help on lm function. Reading help files can be very… helpful</li>
+<li>MOST IMPORTANT - the more time you spend using R, the more comfortable you become with it. After doing your first real project in R, you won’t look back. I promise.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="class" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>Final Words of Warning</h2>
+  </hgroup>
+  <article>
+    <p><q>Using R is a bit akin to smoking. 
+The beginning is difficult, one may get headaches
+and even gag the first few times. 
+But in the long run, it becomes pleasurable and even addictive. 
+Yet, deep down, for those willing to be honest, there is 
+something not fully healthy in it.</q></p>
+
+<p>--Francois Pinard</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>Acknowledgements</h2>
+  </hgroup>
+  <article>
+    <p>Some material cribbed from: Matthew Keller, UCLA Academic Technology Services Technical Report Series (by Patrick Burns) and presentations (found online) by Bioconductor, Wolfgang Huber and Hung Chen, &amp; various Harry Potter websites.</p>
+
+<p>This presentation was written in <a href="http://www.rstudio.com/ide/docs/authoring/using_markdown">RMarkdown</a> using <a href="http://slidify.org/">Slidify</a>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+
+  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+<!-- Grab CDN jQuery, fall back to local if offline -->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery-1.7.min.js"><\/script>')</script>
+<!-- Load Javascripts for Widgets -->
+<!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+</html>
